@@ -4,5 +4,31 @@
             "name": "Lee Hankins",
             "uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1"
         }
+    },
+    "player": {
+        "player01": {
+        "uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1",
+        "number": "01",
+        "question": "What is your responsibility?",
+        "answer": "A"   
+        },
+        "player02": {
+         "uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1",
+        "number": "02",
+        "question": "What is your responsibility?",
+        "answer": "B"    
+        },
+         "player03": {
+         "uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1",
+        "number": "03",
+        "question": "What is your responsibility?",
+        "answer": "C"    
+        },
+         "player04": {
+         "uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1",
+        "number": "04",
+        "question": "What is your responsibility?",
+        "answer": "D"    
+        }   
     }
 }
