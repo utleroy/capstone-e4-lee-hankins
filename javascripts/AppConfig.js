@@ -36,6 +36,11 @@ app.config(function($routeProvider){
 		templateUrl: "partials/auth.html",
 		controller: "AuthCtrl"
 	})
+	.when("/playbook", {
+		templateUrl: "partials/playbook.html",
+		controller: "PlaybookCtrl",
+		resolve: {isAuth}
+	})
 	.when("/logout", {
 		templateUrl: "partials/auth.html",
 		controller: "AuthCtrl",
