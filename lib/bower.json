@@ -1,7 +1,7 @@
 {
   "name": "lib",
   "description": "",
-  "main": "Gulpfile.js",
+  "main": "index.js",
   "authors": [
     "Bryan Hankins <bryanhankins@me.com>"
   ],
