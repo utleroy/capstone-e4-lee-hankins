@@ -46,5 +46,10 @@ app.config(function($routeProvider){
 		controller: "AuthCtrl",
 		resolve: {isAuth}
 	})
+	.when("/quiz", {
+		templateUrl: "partials/quiz.html",
+		controller: "PlaybookCtrl",
+		resolve: {isAuth}
+	})
 	.otherwise("/auth");
 });
