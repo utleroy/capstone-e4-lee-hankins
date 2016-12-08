@@ -37,5 +37,22 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
         });
     };
 
-    return {getPlays:getPlays, getQuiz:getQuiz};
+    var postScore = function(score){
+		return $q((resolve, reject)=>{
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/scores.json`, 
+				JSON.stringify({
+					postedScore: score.postedScore,
+					playerId: score.playerId
+				})
+				)
+			.success(function(postResponse){
+				resolve(postResponse);
+			})
+			.error(function(postError){
+				reject(postError);
+			});
+		});
+	};
+
+    return {getPlays:getPlays, getQuiz:getQuiz, postScore:postScore};
 });

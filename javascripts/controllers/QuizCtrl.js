@@ -61,14 +61,27 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 	getPlayer();
 
 	$scope.answersQB = function () {
-		let obtainAnswerQB = $('#QB_question1 input:radio:checked').val();
-		console.log("QB answer", obtainAnswerQB);
-		if(obtainAnswerQB === "A"){
+		let userScore = 0;
+		let obtainAnswerQB_Q1 = $('#QB_question1 input:radio:checked').val();
+		console.log("QB answer", obtainAnswerQB_Q1);
+
+		if(obtainAnswerQB_Q1 === "A"){
 			console.log("correct!");
-		}else{
-			console.log("Wrong Dumbass!!");
-		}
+			userScore ++;
+		};
+
+		// Do math to calculate score into a percentage
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid
+		};
+
+		PlaybookFactory.postScore(postUserScore);
 	};
+
+
 
 	$scope.answersRB = function () {
 		let obtainAnswerRB = $('#RB_question1 input:radio:checked').val();
@@ -84,7 +97,7 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 		let obtainAnswerTE = $('#TE_question1 input:radio:checked').val();
 		console.log("TE answer", obtainAnswerTE);
 		if(obtainAnswerTE === "B"){
-			console.log("correct!", $scope.loggedInUser.email);
+			console.log("correct!", $scope.loggedInUser);
 		}else{
 			console.log("Wrong Dumbass!!");
 		}

@@ -51,5 +51,15 @@ app.config(function($routeProvider){
 		controller: "QuizCtrl",
 		resolve: {isAuth}
 	})
+	.when("/roster", {
+		templateUrl: "partials/roster.html",
+		controller: "RosterCtrl",
+		resolve: {isAuth}
+	})
+	.when("/scores", {
+		templateUrl: "partials/scores.html",
+		controller: "ScoresCtrl",
+		resolve: {isAuth}
+	})
 	.otherwise("/auth");
 });
