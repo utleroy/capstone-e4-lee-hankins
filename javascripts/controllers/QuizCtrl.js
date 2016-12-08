@@ -1,8 +1,8 @@
 "use strict";
 
 
-app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFactory){
-  $scope.welcome = "hello";     // this is like a console log AKA it tests it
+app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFactory, AuthFactory){
+	$scope.loggedInUser = AuthFactory.getUser();
   $scope.quiz = [];    //we put this info (data for people/to do items/etc) in FB database
   $scope.showme = "qb";
 
@@ -14,7 +14,7 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
   $scope.TE_quiz = false;
   $scope.WR_quiz = false;
 
-  $scope.trial = function (player) {
+  $scope.position = function (player) {
   	console.log("player selected: ", player);
   	if(player === "qb"){
   		$scope.QB_quiz = true;
@@ -80,11 +80,11 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 		}
 	};
 
-	$scope.answersTE = function () {
+	$scope.answersTE = function (player) {
 		let obtainAnswerTE = $('#TE_question1 input:radio:checked').val();
 		console.log("TE answer", obtainAnswerTE);
 		if(obtainAnswerTE === "B"){
-			console.log("correct!");
+			console.log("correct!", $scope.loggedInUser.email);
 		}else{
 			console.log("Wrong Dumbass!!");
 		}
