@@ -36,5 +36,6 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
             });
         });
     };
+
     return {getPlays:getPlays, getQuiz:getQuiz};
 });

@@ -12,59 +12,73 @@
 
 <div class="QB_quiz" ng-show="QB_quiz">
 	<h3>What is your responsibility for QB?</h3>
-
-<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> A. Hand off to the RB
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> B. Pass to the RB
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> C. Fumble on purpose
-	</label>
+	<div id="QB_question1">
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="A" autocomplete="off"> A. Hand off to the RB
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="B" autocomplete="off"> B. Pass to the RB
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="C" autocomplete="off"> C. Fumble on purpose
+		</label>
+	</div>
+	<hr>
+	<button type="button" ng-click="answersQB()" class="btn btn-primary">Submit Quiz</button>
 </div>
 
 <div class="RB_quiz" ng-show="RB_quiz">
 	<h3>What is your responsibility for RB?</h3>
-
-<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> A. Run through the 2 gap
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> B. Run through the 4 gap
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> C. Kick the ball
-	</label>
+	<div id="RB_question1">
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="A" autocomplete="off"> A. Run through the 2 gap
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="B" autocomplete="off"> B. Run through the 4 gap
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="C" autocomplete="off"> C. Kick the ball
+		</label>
+	</div>
+	<hr>
+	<button type="button" ng-click="answersRB()" class="btn btn-primary">Submit Quiz</button>
 </div>
 
 <div class="TE_quiz" ng-show="TE_quiz">
 	<h3>What is your responsibility for TE?</h3>
+	<div id="TE_question1">
+
 	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> A. Run a post route
+		<input type="radio" name="options" value="A" autocomplete="off"> A. Run a post route
 	</label>
 	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> B. Run a slant route
+		<input type="radio" name="options" value="B" autocomplete="off"> B. Run a slant route
 	</label>
 	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> C. Run to the locker room
+		<input type="radio" name="options" value="C" autocomplete="off"> C. Run to the locker room
 	</label>
+	</div>
+	<hr>
+	<button type="button" ng-click="answersTE()" class="btn btn-primary">Submit Quiz</button>
 </div>
 
 <div class="WR_quiz" ng-show="WR_quiz">
 	<h3>What is your responsibility for WR?</h3>
-
-<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> A. Block for a wide receiver screen
+<div id="WR_question1">
+	<label class="btn btn-success col-md-12 answer">
+		<input type="radio" name="options" value="A" autocomplete="off"> A. Block for a wide receiver screen
 	</label>
 	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> B. run a deep route
+		<input type="radio" name="options" value="B" autocomplete="off"> B. run a deep route
 	</label>
 	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" id="option2" autocomplete="off"> C. Grab the ref's wistle
+		<input type="radio" name="options" value="C" autocomplete="off"> C. Grab the ref's wistle
 	</label>
+</div>
+<hr>
+	<button type="button" ng-click="answersWR()" class="btn btn-primary">Submit Quiz</button>
 </div>
 
 
-<hr>
-<button type="button" class="btn btn-primary">Submit QUiz</button>
+
+

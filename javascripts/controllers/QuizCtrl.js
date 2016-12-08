@@ -1,6 +1,7 @@
 "use strict";
 
-app.controller("PlaybookCtrl", function($scope, $rootScope, $location, PlaybookFactory){
+
+app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFactory){
   $scope.welcome = "hello";     // this is like a console log AKA it tests it
   $scope.quiz = [];    //we put this info (data for people/to do items/etc) in FB database
   $scope.showme = "qb";
@@ -14,7 +15,7 @@ app.controller("PlaybookCtrl", function($scope, $rootScope, $location, PlaybookF
   $scope.WR_quiz = false;
 
   $scope.trial = function (player) {
-  	console.log("player", player);
+  	console.log("player selected: ", player);
   	if(player === "qb"){
   		$scope.QB_quiz = true;
   		$scope.RB_quiz = false;
@@ -56,7 +57,46 @@ app.controller("PlaybookCtrl", function($scope, $rootScope, $location, PlaybookF
     	$scope.quiz = quiz;
     	console.log("quiz");
     });
-};
+	};
+	getPlayer();
 
-getPlayer();
+	$scope.answersQB = function () {
+		let obtainAnswerQB = $('#QB_question1 input:radio:checked').val();
+		console.log("QB answer", obtainAnswerQB);
+		if(obtainAnswerQB === "A"){
+			console.log("correct!");
+		}else{
+			console.log("Wrong Dumbass!!");
+		}
+	};
+
+	$scope.answersRB = function () {
+		let obtainAnswerRB = $('#RB_question1 input:radio:checked').val();
+		console.log("RB answer", obtainAnswerRB);
+		if(obtainAnswerRB === "B"){
+			console.log("correct!");
+		}else{
+			console.log("Wrong Dumbass!!");
+		}
+	};
+
+	$scope.answersTE = function () {
+		let obtainAnswerTE = $('#TE_question1 input:radio:checked').val();
+		console.log("TE answer", obtainAnswerTE);
+		if(obtainAnswerTE === "B"){
+			console.log("correct!");
+		}else{
+			console.log("Wrong Dumbass!!");
+		}
+	};
+
+	$scope.answersWR = function () {
+		let obtainAnswerWR = $('#WR_question1 input:radio:checked').val();
+		console.log("WR answer", obtainAnswerWR);
+		if(obtainAnswerWR === "B"){
+			console.log("correct!");
+		}else{
+			console.log("Wrong Dumbass!!");
+		}
+	};
 });
