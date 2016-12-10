@@ -1,9 +1,9 @@
 {
-    "users": {
-        "user0": {
-            "name": "Lee Hankins",
-            "uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1",
-        }
-    }
-
+	"users": {
+		"user0": {
+			"username": "Lee Hankins",
+			"uid": "R8i0Mw6D2dNcIDIlgjTGa2sPPUy1",
+			"email": "l@l.com"
+		}
+	}
 }

@@ -61,5 +61,10 @@ app.config(function($routeProvider){
 		controller: "ScoresCtrl",
 		resolve: {isAuth}
 	})
+	.when("/edit-user", {
+		templateUrl: "partials/edit-user.html",
+		controller: "UserCtrl",
+		resolve: {isAuth}
+	})
 	.otherwise("/auth");
 });

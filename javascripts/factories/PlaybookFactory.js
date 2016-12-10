@@ -2,62 +2,62 @@
 
 app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 	var getPlays = function(){
-        return $q((resolve, reject)=>{
-            $http.get("img/play1.png")
-            .success(function(response){
-                let plays = [];
-                Object.keys(response).forEach(function(key){
-                    response[key].id = key;
-                    plays.push(response[key]);
-                });
-                console.log("plays", plays);
-                resolve(plays);
-            })
-            .error(function(errorResponse){
-                reject(errorResponse);
-            });
-        });
-    };
+		return $q((resolve, reject)=>{
+			$http.get("img/play1.png")
+			.success(function(response){
+				let plays = [];
+				Object.keys(response).forEach(function(key){
+					response[key].id = key;
+					plays.push(response[key]);
+				});
+				console.log("plays", plays);
+				resolve(plays);
+			})
+			.error(function(errorResponse){
+				reject(errorResponse);
+			});
+		});
+	};
 
-    var getQuiz = function(userId){
-        return $q((resolve, reject)=>{
-            $http.get(`${FIREBASE_CONFIG.databaseURL}/players.json?orderBy="uid"&equalTo="${userId}"`)
-            .success(function(response){
-                let players = [];
-                Object.keys(response).forEach(function(key){
-                    response[key].id = key;
-                    players.push(response[key]);
-                });
-                console.log("players", players);
-                resolve(players);
-            })
-            .error(function(errorResponse){
-                reject(errorResponse);
-            });
-        });
-    };
+	var getQuiz = function(userId){
+		return $q((resolve, reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/players.json?orderBy="uid"&equalTo="${userId}"`)
+			.success(function(response){
+				let players = [];
+				Object.keys(response).forEach(function(key){
+					response[key].id = key;
+					players.push(response[key]);
+				});
+				console.log("players", players);
+				resolve(players);
+			})
+			.error(function(errorResponse){
+				reject(errorResponse);
+			});
+		});
+	};
 
 	var getScores = function(singlePlayer) {
 		return $q((resolve,reject)=>{
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/scores.json?orderBy="playerId"&equalTo="${singlePlayer}"`
 				)
 			.success(function(response){
-                let singlePlayerScore = [];
-                Object.keys(response).forEach(function(key){
-                    response[key].id = key;
-                    singlePlayerScore.push(response[key]);
-                });
-                console.log("singlePlayerScore", singlePlayerScore);
-                resolve(singlePlayerScore);
-            })
-            .error(function(errorResponse){
-                reject(errorResponse);
-            });
+				let singlePlayerScore = [];
+				Object.keys(response).forEach(function(key){
+					response[key].id = key;
+					singlePlayerScore.push(response[key]);
+				});
+				console.log("singlePlayerScore", singlePlayerScore);
+				resolve(singlePlayerScore);
+			})
+			.error(function(errorResponse){
+				reject(errorResponse);
+			});
 		});
 	};
 
-    var postScore = function(score){
-    	console.log("score", score);
+	var postScore = function(score){
+		console.log("score", score);
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/scores.json`, 
 				JSON.stringify({
@@ -87,6 +87,28 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
+	var getUser = function(getUserId){
+		return $q((resolve, reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${getUserId}"`)
+			.success(function(response){
+				let users = [];
+				Object.keys(response).forEach(function(key){
+					response[key].id = key;
+					users.push(response[key]);
+				});
+				resolve(users);
+			})
+			.error(function(errorResponse){
+				reject(errorResponse);
+			});
+		});
+	};
 
-    return {getPlays:getPlays, getQuiz:getQuiz, postScore:postScore, getScores:getScores, deleteItem:deleteItem};
-});
+
+	return {getPlays:getPlays, 
+			getQuiz:getQuiz, 
+			postScore:postScore, 
+			getScores:getScores, 
+			deleteItem:deleteItem, 
+			getUser:getUser};
+	});
