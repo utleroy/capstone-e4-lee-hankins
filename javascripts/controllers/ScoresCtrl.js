@@ -1,15 +1,18 @@
 "use strict";
 
-app.controller('ScoresCtrl', function($scope, $location, PlaybookFactory){
+app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScope, PlaybookFactory, AuthFactory){
 	console.log("ScoresCtrl");
-	$scope.actualScore = {};
+	//get scores from firebase.
+	//populate dom with FB data.
 
-	$scope.addScore = function(){
-		$scope.actualScore.playerId = $rootScope.user.playerId;
-		PlaybookFactory.postUserScore($scope.actualScore).then(function(scoreId){
-			$location.url("/scores");
-			$scope.actualScore = {};
-			
+	$scope.singlePlayerScores = [];
+
+	let getSingleScore = function(){
+		PlaybookFactory.getScores($rootScope.user.uid).then(function(fbItems) {
+			console.log(fbItems);
+			$scope.singlePlayerScores = fbItems;
 		});
 	};
+
+	getSingleScore();
 });

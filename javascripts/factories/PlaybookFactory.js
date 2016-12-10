@@ -37,7 +37,27 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
         });
     };
 
+	var getScores = function(singlePlayer) {
+		return $q((resolve,reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/scores.json?orderBy="playerId"&equalTo="${singlePlayer}"`
+				)
+			.success(function(response){
+                let singlePlayerScore = [];
+                Object.keys(response).forEach(function(key){
+                    response[key].id = key;
+                    singlePlayerScore.push(response[key]);
+                });
+                console.log("singlePlayerScore", singlePlayerScore);
+                resolve(singlePlayerScore);
+            })
+            .error(function(errorResponse){
+                reject(errorResponse);
+            });
+		});
+	};
+	
     var postScore = function(score){
+    	console.log("score", score);
 		return $q((resolve, reject)=>{
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/scores.json`, 
 				JSON.stringify({
@@ -54,5 +74,6 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-    return {getPlays:getPlays, getQuiz:getQuiz, postScore:postScore};
+
+    return {getPlays:getPlays, getQuiz:getQuiz, postScore:postScore, getScores:getScores};
 });
