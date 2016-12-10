@@ -15,4 +15,13 @@ app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScop
 	};
 
 	getSingleScore();
+
+	$scope.deleteItem = function(itemId){
+
+		console.log("clicked", itemId);
+		PlaybookFactory.deleteItem(itemId).then(function(response){
+			getSingleScore();
+		});
+	};
+
 });

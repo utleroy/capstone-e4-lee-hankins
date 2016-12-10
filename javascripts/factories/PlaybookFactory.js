@@ -55,7 +55,7 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
             });
 		});
 	};
-	
+
     var postScore = function(score){
     	console.log("score", score);
 		return $q((resolve, reject)=>{
@@ -74,6 +74,19 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
+	var deleteItem = function(itemId){
+		console.log("itemsdjfs", itemId);
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/scores/${itemId}.json`)
+			.success(function(deleteResponse){
+				resolve(deleteResponse);
+			})
+			.error(function(deleteError){
+				reject(deleteError);
+			});
+		});
+	};
 
-    return {getPlays:getPlays, getQuiz:getQuiz, postScore:postScore, getScores:getScores};
+
+    return {getPlays:getPlays, getQuiz:getQuiz, postScore:postScore, getScores:getScores, deleteItem:deleteItem};
 });
