@@ -1,23 +1,6 @@
 "use strict";
 
 app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
-	var getPlays = function(){
-		return $q((resolve, reject)=>{
-			$http.get("img/play1.png")
-			.success(function(response){
-				let plays = [];
-				Object.keys(response).forEach(function(key){
-					response[key].id = key;
-					plays.push(response[key]);
-				});
-				console.log("plays", plays);
-				resolve(plays);
-			})
-			.error(function(errorResponse){
-				reject(errorResponse);
-			});
-		});
-	};
 
 	var getQuiz = function(userId){
 		return $q((resolve, reject)=>{
@@ -62,7 +45,8 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 			$http.post(`${FIREBASE_CONFIG.databaseURL}/scores.json`, 
 				JSON.stringify({
 					postedScore: score.postedScore,
-					playerId: score.playerId
+					playerId: score.playerId,
+					username: score.username
 				})
 				)
 			.success(function(postResponse){
@@ -73,6 +57,7 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	};
+
 
 	var deleteItem = function(itemId){
 		console.log("itemsdjfs", itemId);
@@ -105,7 +90,7 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 
-	return {getPlays:getPlays, 
+	return { 
 			getQuiz:getQuiz, 
 			postScore:postScore, 
 			getScores:getScores, 

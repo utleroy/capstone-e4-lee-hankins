@@ -40,15 +40,6 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
   		$scope.TE_quiz = false;
   		$scope.QB_quiz = false;
   	}
-  	// userAnswers = ['A','B','B']
-  	// $ userAnswers = {
-  	// 	question1: 'A',
-  	// 	question2: 'B',
-  	// }
-
-
-
-  	// actualAnswers = ['A','C','B']
 
   };
 
@@ -68,23 +59,30 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 		console.log("QB answer", obtainAnswerQB_Q1);
 
 		if(obtainAnswerQB_Q1 === "A"){
+			$location.url("/correct");
 			console.log("correct!");
 			userScore ++;
-		}
 
 		// Do math to calculate score into a percentage
 		let actualScore = (userScore / 1) * 100;
 		console.log("actualScore", actualScore);
 		let postUserScore = {
 			postedScore: actualScore,
-			playerId: $scope.loggedInUser.uid
+			playerId: $scope.loggedInUser.uid,
+			email: ""
 		};
 		console.log(postUserScore);
 
 		PlaybookFactory.postScore(postUserScore).then(function(){
 			console.log("jashdfljahsdfasdfjahsdlf");
-			$location.url("/scores");
+			// $location.url("/scores");
 		});
+		}else{
+			$location.url("/wrong");
+		}
+
+
+
 	};
 
 

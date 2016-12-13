@@ -1,1 +1,25 @@
-<h1>roster</h1>
+
+<div class="container">
+	<h3>Add New Member: </h3>
+	<div class="row">
+		<div class="input-group col-md-offset-2 col-md-8 center-block">
+			<input type="text" class="form-control" placeholder="email address" aria-describedby="basic-addon1" ng-model="newMember.email">
+		</div>
+		<div class="input-group col-md-8 center-block">
+			<input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" ng-model="newMember.username">
+		</div>
+		<div class="input-group col-md-8 center-block">
+			<input type="text" class="form-control" placeholder="Phone Number" aria-describedby="basic-addon1" ng-model="newMember.phone">
+		</div>
+		<button class="btn btn-primary col-md-offset-2 col-md-8" ng-click="addToRoster()">Add Member</button>
+		<hr class="col-md-10 center-block">
+	</div>
+	<h5>Roster Members: </h5>
+
+	<div class="center-block col-md-offset-2 col-md-8" ng-repeat="member in allMembers">
+	<h2 class="tag tag-pill">{{member.username}}</h2>
+		<p class="card-text">Email: {{member.email}}</p>
+		<span class="card-text">Phone Number: {{member.phone}}</span>
+		<span class="pull-right"><button class="btn btn-danger btn-xs" ng-click="deleteMember(member.email)">delete</button><button class="btn btn-info btn-xs">Edit</button></span>
+		<hr>
+	</div>

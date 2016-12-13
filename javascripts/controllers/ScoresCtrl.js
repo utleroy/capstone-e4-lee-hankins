@@ -9,7 +9,7 @@ app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScop
 
 	let getSingleScore = function(){
 		PlaybookFactory.getScores($rootScope.user.uid).then(function(fbItems) {
-			console.log(fbItems);
+			console.log("getSingleScore: ", fbItems);
 			$scope.singlePlayerScores = fbItems;
 		});
 	};

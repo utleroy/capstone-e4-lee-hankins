@@ -9,7 +9,8 @@ app.factory('UserFactory', function($q, $http, FIREBASE_CONFIG){
 				JSON.stringify({
 					uid: authData.uid,
 					username: authData.username,
-					email: authData.email
+					email: authData.email,
+					phone: authData.phone
 				})
 				)
 			.success(function(storeUserSuccess){
@@ -37,6 +38,54 @@ app.factory('UserFactory', function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	return{addUser:addUser, getUser:getUser};
+	var postRosterMember = function(member){
+		console.log("member", member);
+		return $q((resolve, reject)=>{
+			$http.post(`${FIREBASE_CONFIG.databaseURL}/members.json`, 
+				JSON.stringify({
+					username: member.username,
+					phone: member.phone,
+					email: member.email,
+				})
+				)
+			.success(function(postResponse){
+				resolve(postResponse);
+			})
+			.error(function(postError){
+				reject(postError);
+			});
+		});
+	};
+
+	let getRoster = () => {
+		return $q((resolve,reject)=>{
+			$http.get(`${FIREBASE_CONFIG.databaseURL}/members/.json`)
+			.success(function(userObject){
+				let allMembers = [];
+				Object.keys(userObject).forEach(function(key){
+					allMembers.push(userObject[key]);
+				});
+				resolve(allMembers);
+			})
+			.error(function(error){
+				reject(error);
+			});
+		});
+	};
+
+	var deleteMember = function(email){
+		console.log("delete by email", email);
+		return $q((resolve, reject)=>{
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/members/${email}.json`)
+			.success(function(deleteResponse){
+				resolve(deleteResponse);
+			})
+			.error(function(deleteError){
+				reject(deleteError);
+			});
+		});
+	};
+
+	return{addUser:addUser, getUser:getUser, postRosterMember:postRosterMember, getRoster:getRoster, deleteMember:deleteMember};
 
 });

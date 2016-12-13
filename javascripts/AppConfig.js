@@ -66,5 +66,15 @@ app.config(function($routeProvider){
 		controller: "UserCtrl",
 		resolve: {isAuth}
 	})
+	.when("/correct", {
+		templateUrl: "partials/correct.html",
+		controller: "UserCtrl",
+		resolve: {isAuth}
+	})
+	.when("/wrong", {
+		templateUrl: "partials/wrong.html",
+		controller: "UserCtrl",
+		resolve: {isAuth}
+	})
 	.otherwise("/auth");
 });
