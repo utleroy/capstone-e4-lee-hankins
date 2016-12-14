@@ -23,11 +23,13 @@ app.factory('UserFactory', function($q, $http, FIREBASE_CONFIG){
 	};
 
 	let getUser = (userId) => {
+		console.log("userId",userId)
 		return $q((resolve,reject)=>{
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users/.json?orderBy="uid"&equalTo="${userId}"`)
 			.success(function(userObject){
 				let users = [];
 				Object.keys(userObject).forEach(function(key){
+					userObject[key].id = key;
 					users.push(userObject[key]);
 				});
 				resolve(users[0]);
@@ -86,6 +88,26 @@ app.factory('UserFactory', function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	return{addUser:addUser, getUser:getUser, postRosterMember:postRosterMember, getRoster:getRoster, deleteMember:deleteMember};
+	var editMember = function(editedUser) {
+		console.log("editedUser", editedUser);
+		return $q((resolve,reject)=>{
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/users/${editedUser.id}.json`, 
+				JSON.stringify({
+					username: editedUser.username,
+					phone: editedUser.phone,
+					email: editedUser.email,
+					uid: editedUser.uid
+				})
+			)
+			.success(function(editResponse){
+				resolve(editResponse);
+			})
+			.error(function(editError){
+				reject(editError);
+			})
+		})
+	}
+
+	return{addUser:addUser, getUser:getUser, postRosterMember:postRosterMember, getRoster:getRoster, deleteMember:deleteMember, editMember:editMember};
 
 });

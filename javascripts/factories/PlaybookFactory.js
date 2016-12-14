@@ -72,28 +72,9 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	var getUser = function(getUserId){
-		return $q((resolve, reject)=>{
-			$http.get(`${FIREBASE_CONFIG.databaseURL}/users.json?orderBy="uid"&equalTo="${getUserId}"`)
-			.success(function(response){
-				let users = [];
-				Object.keys(response).forEach(function(key){
-					response[key].id = key;
-					users.push(response[key]);
-				});
-				resolve(users);
-			})
-			.error(function(errorResponse){
-				reject(errorResponse);
-			});
-		});
-	};
-
-
 	return { 
 			getQuiz:getQuiz, 
 			postScore:postScore, 
 			getScores:getScores, 
-			deleteItem:deleteItem, 
-			getUser:getUser};
+			deleteItem:deleteItem};
 	});

@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller('UserCtrl', function($scope, $rootScope, PlaybookFactory){
+app.controller('UserCtrl', function($scope, $rootScope, PlaybookFactory, UserFactory){
 	console.log("helloeoeoeoeoeoe");
 
 	$scope.users = [];
@@ -13,4 +13,5 @@ app.controller('UserCtrl', function($scope, $rootScope, PlaybookFactory){
 		});
 	};
 	getAllUsers();
+
 });

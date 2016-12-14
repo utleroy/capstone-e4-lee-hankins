@@ -63,7 +63,7 @@ app.config(function($routeProvider){
 	})
 	.when("/edit-user", {
 		templateUrl: "partials/edit-user.html",
-		controller: "UserCtrl",
+		controller: "EditCtrl",
 		resolve: {isAuth}
 	})
 	.when("/correct", {

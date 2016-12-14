@@ -1,7 +1,7 @@
 <h1>edit user</h1>
-<div ng-repeat="user in users">
-	<h3>Name: {{user.username}}</h3>
-	<h3>Email: {{user.email}}</h3>
-	<h3>Phone Number: {{user.phone}}</h3>
-	<button class="btn btn-info">Edit</button>
+<div>
+	<h3>Name:<input type="text" name="" ng-model="user.username"></h3>
+	<h3>Phone Number:<input type="text" name="" ng-model="user.phone"></h3>
+	<h3>Email:<input disabled type="text" name="" ng-model="user.email"></h3>
+	<button class="btn btn-info" ng-click="editUser()">Edit</button>
 </div>

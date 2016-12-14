@@ -20,6 +20,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 			console.log("login working", didLogin);
 			return UserFactory.getUser(didLogin.uid);
 		}).then(function(userCreds){
+			console.log("login User", userCreds);
 			$rootScope.user = userCreds;
 			$scope.login = {};
 			$scope.register = {};
@@ -49,7 +50,7 @@ app.controller("AuthCtrl", function($scope, $rootScope, $location, AuthFactory, 
 	};
 
 	$scope.loginUser = function(loginNewUser) {
-		logMeIn(loginNewUser);
+		logMeIn($scope.login);
 	};
 
 

@@ -1,25 +1,33 @@
-
-<div class="container">
+	
+<div class="container boxed col-md-12">
 	<h3>Add New Member: </h3>
-	<div class="row">
-		<div class="input-group col-md-offset-2 col-md-8 center-block">
-			<input type="text" class="form-control" placeholder="email address" aria-describedby="basic-addon1" ng-model="newMember.email">
-		</div>
-		<div class="input-group col-md-8 center-block">
-			<input type="text" class="form-control" placeholder="Full Name" aria-describedby="basic-addon1" ng-model="newMember.username">
-		</div>
-		<div class="input-group col-md-8 center-block">
-			<input type="text" class="form-control" placeholder="Phone Number" aria-describedby="basic-addon1" ng-model="newMember.phone">
-		</div>
-		<button class="btn btn-primary col-md-offset-2 col-md-8" ng-click="addToRoster()">Add Member</button>
-		<hr class="col-md-10 center-block">
-	</div>
-	<h5>Roster Members: </h5>
 
-	<div class="center-block col-md-offset-2 col-md-8" ng-repeat="member in allMembers">
+	<form class="form-inline">
+		<div class="form-group">
+			<label class="sr-only" for="exampleInputEmail3"></label>
+			<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email" ng-model="newMember.email">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="exampleInputPassword3"></label>
+			<input type="FullName" class="form-control" id="exampleInputFullName3" placeholder="FullName" ng-model="newMember.username">
+		</div>
+		<div class="form-group">
+			<label class="sr-only" for="exampleInputPassword3"></label>
+			<input type="password" class="form-control" id="exampleInputPassword3" placeholder="Phone Number" ng-model="newMember.phone">
+		</div>
+		<button type="submit" class="btn btn-default" ng-click="addToRoster()">Add Member</button>
+	</form>
+</div>
+
+
+
+
+<h5>Roster Members: </h5>
+
+<div class="center-block col-md-offset-2 col-md-8" ng-repeat="member in allMembers">
 	<h2 class="tag tag-pill">{{member.username}}</h2>
-		<p class="card-text">Email: {{member.email}}</p>
-		<span class="card-text">Phone Number: {{member.phone}}</span>
-		<span class="pull-right"><button class="btn btn-danger btn-xs" ng-click="deleteMember(member.email)">delete</button><button class="btn btn-info btn-xs">Edit</button></span>
-		<hr>
-	</div>
+	<p class="card-text">Email: {{member.email}}</p>
+	<span class="card-text">Phone Number: {{member.phone}}</span>
+	<span class="pull-right"><button class="btn btn-danger btn-xs" ng-click="deleteMember(member.email)">delete</button><button class="btn btn-info btn-xs">Edit</button></span>
+	<hr>
+</div>

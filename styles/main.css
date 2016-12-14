@@ -3,3 +3,6 @@
 
 .answer {
   margin: 0 0 15px 0; }
+
+.boxed {
+  border: 1px solid black; }

@@ -44,6 +44,7 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
   };
 
   let getPlayer = function(){
+  	console.log($rootScope.user)
     PlaybookFactory.getQuiz($rootScope.user.uid).then(function(quiz){ //what is here needs to be right below this
     	$scope.quiz = quiz;
     	console.log("quiz");
