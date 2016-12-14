@@ -61,7 +61,6 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 
 		if(obtainAnswerQB_Q1 === "A"){
 			$location.url("/correct");
-			console.log("correct!");
 			userScore ++;
 
 		// Do math to calculate score into a percentage
@@ -70,16 +69,24 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
-			email: ""
 		};
-		console.log(postUserScore);
+		console.log("posted user score", postUserScore);
 
 		PlaybookFactory.postScore(postUserScore).then(function(){
-			console.log("jashdfljahsdfasdfjahsdlf");
-			// $location.url("/scores");
 		});
 		}else{
 			$location.url("/wrong");
+
+			let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
 		}
 
 
