@@ -44,18 +44,18 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
   };
 
   let getPlayer = function(){
-  	console.log($rootScope.user)
+  	console.log($rootScope.user);
     PlaybookFactory.getQuiz($rootScope.user.uid).then(function(quiz){ //what is here needs to be right below this
     	$scope.quiz = quiz;
     	console.log("quiz");
     });
-  };
-  getPlayer();
+};
+getPlayer();
 
-  $scope.answersQB = function () {
+let userScore = 0;
+$scope.answersQB = function () {
 		// $location.url("/scores"); this was too early moved to line85
 		console.log("jksdhfks:");
-		let userScore = 0;
 		let obtainAnswerQB_Q1 = $('#QB_question1 input:radio:checked').val();
 		console.log("QB answer", obtainAnswerQB_Q1);
 
@@ -71,57 +71,131 @@ app.controller("QuizCtrl", function($scope, $rootScope, $location, PlaybookFacto
 			playerId: $scope.loggedInUser.uid,
 		};
 		console.log("posted user score", postUserScore);
-
 		PlaybookFactory.postScore(postUserScore).then(function(){
 		});
-		}else{
-			$location.url("/wrong");
+	}else{
+		$location.url("/wrong");
 
-			let actualScore = (userScore / 1) * 100;
+		let actualScore = (userScore / 1) * 100;
 		console.log("actualScore", actualScore);
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
 		};
 		console.log("posted user score", postUserScore);
-
 		PlaybookFactory.postScore(postUserScore).then(function(){
 		});
-		}
+	}
 
 
 
-	};
+};
 
 
 
-	$scope.answersRB = function () {
-		let obtainAnswerRB = $('#RB_question1 input:radio:checked').val();
-		console.log("RB answer", obtainAnswerRB);
-		if(obtainAnswerRB === "B"){
-			console.log("correct!");
-		}else{
-			console.log("Wrong Dumbass!!");
-		}
-	};
+$scope.answersRB = function () {
 
-	$scope.answersTE = function (player) {
-		let obtainAnswerTE = $('#TE_question1 input:radio:checked').val();
-		console.log("TE answer", obtainAnswerTE);
-		if(obtainAnswerTE === "B"){
-			console.log("correct!", $scope.loggedInUser);
-		}else{
-			console.log("Wrong Dumbass!!");
-		}
-	};
+	let obtainAnswerRB = $('#RB_question1 input:radio:checked').val();
+	console.log("RB answer", obtainAnswerRB);
+	if(obtainAnswerRB === "B"){
 
-	$scope.answersWR = function () {
-		let obtainAnswerWR = $('#WR_question1 input:radio:checked').val();
-		console.log("WR answer", obtainAnswerWR);
-		if(obtainAnswerWR === "B"){
-			console.log("correct!");
-		}else{
-			console.log("Wrong Dumbass!!");
-		}
-	};
+		$location.url("/correct");
+		userScore ++;
+
+		// Do math to calculate score into a percentage
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
+		
+	}else{
+
+		$location.url("/wrong");
+
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
+
+	}
+};
+
+$scope.answersTE = function (player) {
+	let obtainAnswerTE = $('#TE_question1 input:radio:checked').val();
+	console.log("TE answer", obtainAnswerTE);
+	if(obtainAnswerTE === "B"){
+		
+		$location.url("/correct");
+		userScore ++;
+
+		// Do math to calculate score into a percentage
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
+		
+	}else{
+		
+		$location.url("/wrong");
+
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
+	}
+};
+
+$scope.answersWR = function () {
+	let obtainAnswerWR = $('#WR_question1 input:radio:checked').val();
+	console.log("WR answer", obtainAnswerWR);
+	if(obtainAnswerWR === "B"){
+		$location.url("/correct");
+		userScore ++;
+
+		// Do math to calculate score into a percentage
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
+
+	}else{
+		
+		$location.url("/wrong");
+
+		let actualScore = (userScore / 1) * 100;
+		console.log("actualScore", actualScore);
+		let postUserScore = {
+			postedScore: actualScore,
+			playerId: $scope.loggedInUser.uid,
+		};
+		console.log("posted user score", postUserScore);
+		PlaybookFactory.postScore(postUserScore).then(function(){
+		});
+	}
+};
 });

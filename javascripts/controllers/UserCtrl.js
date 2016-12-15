@@ -4,6 +4,8 @@ app.controller('UserCtrl', function($scope, $rootScope, PlaybookFactory, UserFac
 	console.log("helloeoeoeoeoeoe");
 
 	$scope.users = [];
+	$scope.rbPass = false;
+	$scope.tePass = false;
 
 	let getAllUsers = function(){
 		console.log("sdhfjasd", $scope.users);

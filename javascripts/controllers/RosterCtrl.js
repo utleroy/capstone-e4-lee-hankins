@@ -7,7 +7,7 @@ app.controller('RosterCtrl', function($scope, $rootScope, $location, $route, Use
 	$scope.allMembers = [];
 
 	$scope.addToRoster = function(){
-		console.log($scope.newMember)
+		console.log($scope.newMember);
 		UserFactory.postRosterMember($scope.newMember).then(function(memberId){
 			$route.reload();
 			console.log("addToRoster", memberId);
