@@ -3,7 +3,7 @@
 app.controller('RosterCtrl', function($scope, $rootScope, $location, $route, UserFactory){
 	console.log("RosterCtrl");
 
-	$scope.newMember;
+	$scope.newMember = '';
 	$scope.allMembers = [];
 
 	$scope.addToRoster = function(){
