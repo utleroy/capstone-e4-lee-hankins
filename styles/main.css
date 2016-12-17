@@ -12,7 +12,7 @@ body {
   margin: 0 0 15px 0; }
 
 .boxed {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   padding: 10px;
   margin: 10px; }
 
@@ -33,3 +33,16 @@ input {
 
 .play {
   margin-bottom: 15px; }
+
+.navbar {
+  padding-right: 15px; }
+
+.runner {
+  margin-left: -500px;
+  margin-top: -500px; }
+
+.btn-info {
+  background-color: #FF9033; }
+
+.btn-primary {
+  background-color: #FE7400; }
