@@ -4,10 +4,12 @@ app.controller('UserCtrl', function($scope, $rootScope, PlaybookFactory, UserFac
 	console.log("helloeoeoeoeoeoe");
 
 	$scope.users = [];
+	$scope.rbPass = false;
+	$scope.tePass = false;
 
 	let getAllUsers = function(){
 		console.log("sdhfjasd", $scope.users);
-		PlaybookFactory.getUser($rootScope.user.uid).then(function(fbUser) {
+		UserFactory.getUser($rootScope.user.uid).then(function(fbUser) {
 			console.log(fbUser);
 			$scope.users = fbUser;
 		});

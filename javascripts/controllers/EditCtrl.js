@@ -17,4 +17,4 @@ app.controller('EditCtrl', function($scope, $rootScope, UserFactory, AuthFactory
 			console.log("editedUser", editedUser);
 		});
 	};
-})
+});

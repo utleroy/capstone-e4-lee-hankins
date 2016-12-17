@@ -1,5 +1,5 @@
 	
-<div class="container boxed col-md-12">
+<div class="container boxed col-md-10">
 	<h3>Add New Member: </h3>
 
 	<form class="form-inline">
@@ -13,7 +13,7 @@
 		</div>
 		<div class="form-group">
 			<label class="sr-only" for="exampleInputPassword3"></label>
-			<input type="password" class="form-control" id="exampleInputPassword3" placeholder="Phone Number" ng-model="newMember.phone">
+			<input type="phone" class="form-control" id="exampleInputPassword3" placeholder="Phone Number" ng-model="newMember.phone">
 		</div>
 		<button type="submit" class="btn btn-default" ng-click="addToRoster()">Add Member</button>
 	</form>
@@ -22,7 +22,7 @@
 
 
 
-<h5>Roster Members: </h5>
+<!-- <h5>Roster Members: </h5> -->
 
 <div class="center-block col-md-offset-2 col-md-8" ng-repeat="member in allMembers">
 	<h2 class="tag tag-pill">{{member.username}}</h2>

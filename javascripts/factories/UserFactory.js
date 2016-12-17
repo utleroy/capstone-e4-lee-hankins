@@ -23,7 +23,7 @@ app.factory('UserFactory', function($q, $http, FIREBASE_CONFIG){
 	};
 
 	let getUser = (userId) => {
-		console.log("userId",userId)
+		console.log("userId",userId);
 		return $q((resolve,reject)=>{
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/users/.json?orderBy="uid"&equalTo="${userId}"`)
 			.success(function(userObject){
@@ -104,9 +104,9 @@ app.factory('UserFactory', function($q, $http, FIREBASE_CONFIG){
 			})
 			.error(function(editError){
 				reject(editError);
-			})
-		})
-	}
+			});
+		});
+	};
 
 	return{addUser:addUser, getUser:getUser, postRosterMember:postRosterMember, getRoster:getRoster, deleteMember:deleteMember, editMember:editMember};
 
