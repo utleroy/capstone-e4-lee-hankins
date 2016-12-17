@@ -3,3 +3,4 @@ lib/bower_components
 screenshots/
 .DS_Store
 javascripts/AppConstants.js
+public/
