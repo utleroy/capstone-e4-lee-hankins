@@ -54,25 +54,14 @@ getPlayer();
 
 let userScore = 0;
 
-$scope.addAnswer = function() {
-	console.log("clicked!!");
-	let obtainAnswerQB_Q1 = $('#QB_question1 input:radio:checked').val();
-	let obtainAnswerQB_Q2 = $('#QB_question2 input:radio:checked').val();
-	console.log("QB answer question 1", obtainAnswerQB_Q1);
-	console.log("QB answer question 2", obtainAnswerQB_Q2);
-
-};
-
 $scope.answersQB = function () {
 		// $location.url("/scores"); this was too early moved to line85
 		console.log("jksdhfks:");
 		let obtainAnswerQB_Q1 = $('#QB_question1 input:radio:checked').val();
-		let obtainAnswerQB_Q2 = $('#QB_question2 input:radio:checked').val();
 		console.log("QB answer question 1", obtainAnswerQB_Q1);
-		console.log("QB answer question 2", obtainAnswerQB_Q2);
 
-		if(obtainAnswerQB_Q1 === "A" && obtainAnswerQB_Q2 === "B"){
-			// $location.url("/correct");
+		if(obtainAnswerQB_Q1 === "A"){
+			$location.url("/correct");
 			userScore ++;
 			let actualScore = (userScore / 1) * 100;
 			console.log("actualScore", actualScore);
