@@ -24,4 +24,9 @@ app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScop
 		});
 	};
 
+	$scope.time = function() {
+  expect(element(by.binding("1288323623006 | date:'medium'")).getText()).
+     toMatch(/Oct 2\d, 2010 \d{1,2}:\d{2}:\d{2} (AM|PM)/);
+};
+
 });
