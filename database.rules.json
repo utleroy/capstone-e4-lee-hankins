@@ -1,0 +1,18 @@
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true",
+    "players": {
+      ".indexOn": "uid"
+    },
+    "users": {
+      ".indexOn": "uid"
+    },
+    "scores": {
+      ".indexOn": "playerId"
+    },
+    "members": {
+      ".indexOn": "email"
+    }
+  }
+}

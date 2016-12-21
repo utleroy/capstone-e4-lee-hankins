@@ -47,3 +47,33 @@ input {
 .btn-success {
   background-color: #FE7400; }
 
+.loginBtn {
+  margin-bottom: 10px; }
+
+input {
+  border: 3px solid #333; }
+
+.loginBtn {
+  border: 3px solid #333; }
+
+.logo {
+  margin: auto; }
+
+.logoSm {
+  margin-top: -10px; }
+
+.play {
+  margin-bottom: 15px; }
+
+.navbar {
+  padding-right: 15px; }
+
+.runner {
+  margin-left: -500px;
+  margin-top: -500px; }
+
+.btn-info {
+  background-color: #FF9033; }
+
+.btn-success {
+  background-color: #FE7400; }
