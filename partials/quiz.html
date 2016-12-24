@@ -1,12 +1,23 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row">
-		<div class="col-md-12">
-			<h3>Choose your position below</h3>
-			<span ng-click="position('qb')" class="label label-default">QB</span>QUARTER BACK
-			<span ng-click="position('rb')" class="label label-default">RB</span>RUNNING BACK
-			<span ng-click="position('te')" class="label label-default">TE</span>TIGHT END
-			<span ng-click="position('wr')" class="label label-default">WR</span>WIDE RECEIVER
+		<div class="col-md-4">
 		</div>
+		<div class="col-md-4">
+			<h3>Take the quiz</h3>
+			<img src="/img/takeQuiz.png">
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<h3>Choose your position below</h3>
+		<button ng-click="position('qb')" class="btn btn-success col-md-2 position">QB</button>
+		<button ng-click="position('rb')" class="btn btn-success col-md-2 position">RB</button>
+		<button ng-click="position('te')" class="btn btn-success col-md-2 position">TE</button>
+		<button ng-click="position('wr')" class="btn btn-success col-md-2 position">WR</button>	
 	</div>
 </div>
 
@@ -49,15 +60,15 @@
 	<h3>What is your responsibility for TE?</h3>
 	<div id="TE_question1">
 
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" value="A" autocomplete="off"> A. Run a post route
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" value="B" autocomplete="off"> B. Block the outside Linebacker
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" value="C" autocomplete="off"> C. Run to the locker room
-	</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="A" autocomplete="off"> A. Run a post route
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="B" autocomplete="off"> B. Block the outside Linebacker
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="C" autocomplete="off"> C. Run to the locker room
+		</label>
 	</div>
 	<hr>
 	<button type="button" ng-click="answersTE()" class="btn btn-primary">Submit Quiz</button>
@@ -65,18 +76,18 @@
 
 <div class="WR_quiz" ng-show="WR_quiz">
 	<h3>What is your responsibility for WR?</h3>
-<div id="WR_question1">
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" value="A" autocomplete="off"> A. Block for a wide receiver screen
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" value="B" autocomplete="off"> B. run a deep route down the sideline
-	</label>
-	<label class="btn btn-success col-md-12 answer">
-		<input type="radio" name="options" value="C" autocomplete="off"> C. Grab the ref's wistle
-	</label>
-</div>
-<hr>
+	<div id="WR_question1">
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="A" autocomplete="off"> A. Block for a wide receiver screen
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="B" autocomplete="off"> B. run a deep route down the sideline
+		</label>
+		<label class="btn btn-success col-md-12 answer">
+			<input type="radio" name="options" value="C" autocomplete="off"> C. Grab the ref's wistle
+		</label>
+	</div>
+	<hr>
 	<button type="button" ng-click="answersWR()" class="btn btn-primary">Submit Quiz</button>
 </div>
 

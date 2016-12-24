@@ -64,6 +64,7 @@ $scope.answersQB = function () {
 			$location.url("/correct");
 			userScore ++;
 			let actualScore = (userScore / 1) * 100;
+			let userScoreTime = new Date();
 			console.log("actualScore", actualScore);
 			let postUserScore = {
 				postedScore: actualScore,
@@ -80,6 +81,7 @@ $scope.answersQB = function () {
 			let postUserScore = {
 				postedScore: actualScore,
 				playerId: $scope.loggedInUser.uid,
+				scoreTime: userScoreTime
 			};
 			console.log("posted user score", postUserScore);
 			PlaybookFactory.postScore(postUserScore).then(function(){
@@ -107,6 +109,7 @@ $scope.answersQB = function () {
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
+			scoreTime: userScoreTime
 		};
 		console.log("posted user score", postUserScore);
 		PlaybookFactory.postScore(postUserScore).then(function(){
@@ -121,6 +124,7 @@ $scope.answersQB = function () {
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
+			scoreTime: userScoreTime
 		};
 		console.log("posted user score", postUserScore);
 		PlaybookFactory.postScore(postUserScore).then(function(){
@@ -143,6 +147,7 @@ $scope.answersTE = function (player) {
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
+			scoreTime: userScoreTime
 		};
 		console.log("posted user score", postUserScore);
 		PlaybookFactory.postScore(postUserScore).then(function(){
@@ -157,6 +162,8 @@ $scope.answersTE = function (player) {
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
+			scoreTime: userScoreTime
+
 		};
 		console.log("posted user score", postUserScore);
 		PlaybookFactory.postScore(postUserScore).then(function(){
@@ -177,6 +184,8 @@ $scope.answersWR = function () {
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
+			scoreTime: userScoreTime
+
 		};
 		console.log("posted user score", postUserScore);
 		PlaybookFactory.postScore(postUserScore).then(function(){
@@ -191,6 +200,8 @@ $scope.answersWR = function () {
 		let postUserScore = {
 			postedScore: actualScore,
 			playerId: $scope.loggedInUser.uid,
+			scoreTime: userScoreTime
+
 		};
 		console.log("posted user score", postUserScore);
 		PlaybookFactory.postScore(postUserScore).then(function(){

@@ -46,8 +46,7 @@ app.factory("PlaybookFactory", function($q, $http, FIREBASE_CONFIG){
 				JSON.stringify({
 					postedScore: score.postedScore,
 					playerId: score.playerId,
-					username: score.username,
-					position: score.position
+					scoreTime: score.scoreTime
 				})
 				)
 			.success(function(postResponse){

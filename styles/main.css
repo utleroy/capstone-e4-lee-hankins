@@ -68,10 +68,6 @@ input {
 .navbar {
   padding-right: 15px; }
 
-.runner {
-  margin-left: -500px;
-  margin-top: -500px; }
-
 .btn-info {
   background-color: #FF9033; }
 
@@ -80,3 +76,12 @@ input {
 
 .play_1 {
   margin-top: 100px; }
+
+.instructions {
+  margin-top: 100px; }
+
+.label-default {
+  margin-right: 2px; }
+
+.btn.btn-success.col-md-2.position {
+  margin-left: 3.4%; }

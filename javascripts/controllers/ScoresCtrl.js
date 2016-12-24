@@ -6,10 +6,13 @@ app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScop
 	//populate dom with FB data.
 
 	$scope.singlePlayerScores = [];
+	$scope.newTime = [];
 
 	let getSingleScore = function(){
 		PlaybookFactory.getScores($rootScope.user.uid).then(function(fbItems) {
 			console.log("getSingleScore: ", fbItems);
+			$scope.today = new Date();
+			$scope.newTime = $scope.today;
 			$scope.singlePlayerScores = fbItems;
 		});
 	};
@@ -24,9 +27,26 @@ app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScop
 		});
 	};
 
-	$scope.time = function() {
-  expect(element(by.binding("1288323623006 | date:'medium'")).getText()).
-     toMatch(/Oct 2\d, 2010 \d{1,2}:\d{2}:\d{2} (AM|PM)/);
-};
+	// let newTime = function (new_time){
+	// 	PlaybookFactory.getTimeStamp(new_time).then(function(){
+	// 		console.log("newer time", new_time);
+	// 	});
+	// }
+	
+// $scope.getTimeStamp = function(time) {
+// 	var now = new Date();
+// 	console.log("new date", now);
+// 	return ((now.getMonth() + 1) + '/' +
+// 		(now.getDate()) + '/' +
+// 		now.getFullYear() + " " +
+// 		now.getHours() + ':' +
+// 		((now.getMinutes() < 10)
+// 			? ("0" + now.getMinutes())
+// 			: (now.getMinutes())) + ':' +
+// 		((now.getSeconds() < 10)
+// 			? ("0" + now.getSeconds())
+// 			: (now.getSeconds())));
+// }
+// console.log($scope.getTimeStamp());
 
 });

@@ -1,7 +1,8 @@
 <h2>Recent Scores</h2>
 <br>
 <div ng-repeat="score in singlePlayerScores">
-    <span>Date: {{1288323623006 | date:'medium'}}</span>
+    <!-- <span>Date: {{1288323623006 | date:'medium'}}</span> -->
+    <div>Time: {{ today | date : "MM.dd.y @ hh:mm" }}</div>
 
 	<h4>Player's Score: {{score.postedScore}}</h4>
 	<button class="btn btn-danger" ng-click="deleteItem(score.id)">delete</button>
