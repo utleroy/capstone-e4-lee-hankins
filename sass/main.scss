@@ -5,6 +5,14 @@ body {
     background-attachment:fixed;
     background-size: cover;
 }
+iframe {
+	margin-top: -20px;
+}
+
+footer {
+	margin-top: 150px;
+	position: relative;
+}
 
 
 .legend {
@@ -108,6 +116,7 @@ input {
  .btn.btn-success.col-md-2.position {
  	margin-left: 3.4%;
  }
+
 
 
 

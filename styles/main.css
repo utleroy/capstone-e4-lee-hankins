@@ -5,6 +5,13 @@ body {
   background-attachment: fixed;
   background-size: cover; }
 
+iframe {
+  margin-top: -20px; }
+
+footer {
+  margin-top: 150px;
+  position: relative; }
+
 .legend {
   color: white; }
 

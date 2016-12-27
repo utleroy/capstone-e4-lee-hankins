@@ -9,41 +9,52 @@
 </head>
 <body ng-app="CoachApp"> <!-- needed to define the app name in the js file-->
 
-<div ng-include="'./partials/nav.html'"></div>
+  <div ng-include="'./partials/nav.html'"></div>
+    
+    <iframe src="https://scorestream.com/widgets/scoreboards/horz?userWidgetId=13293" style="padding:0px;border:0px;width:100%;max-width:100%;height:100%;max-height:75px;" title="Realtime sports scoreboard widget" scrolling="no" frameBorder="0"></iframe>
 
   <div class="row">
     <h1></h1>
     <div class="col-xs-offset-2 col-xs-8" ng-view>
-    
-      
+
+
     </div>
+
   </div>
+  
 
-<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
-<script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
-<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
-<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+ <!--  <footer class="footer">
 
-<script src="/javascripts/app.js"></script>
+          <iframe src="https://scorestream.com/widgets/scoreboards/horz?userWidgetId=13293" style="padding:0px;border:0px;width:100%;max-width:100%;height:100%;max-height:100%;" title="Realtime sports scoreboard widget" scrolling="no" frameBorder="0"></iframe>
 
-<script src="/javascripts/AppConstants.js"></script>
-<script src="/javascripts/AppConfig.js"></script>
-<script src="/javascripts/factories/AuthFactory.js"></script>
-<script src="/javascripts/factories/PlaybookFactory.js"></script>
-<script src="/javascripts/factories/UserFactory.js"></script>
-
-<script src="/javascripts/controllers/AuthCtrl.js"></script>
-<script src="/javascripts/controllers/PlaybookCtrl.js"></script>
-<script src="/javascripts/controllers/QuizCtrl.js"></script>
-<script src="/javascripts/controllers/RosterCtrl.js"></script>
-<script src="/javascripts/controllers/ScoresCtrl.js"></script>
-<script src="/javascripts/controllers/UserCtrl.js"></script>
-<script src="/javascripts/controllers/EditCtrl.js"></script>
-<!-- <script src="/javascripts/controllers/NavCtrl.js"></script> -->
+    </footer> -->
 
 
-<!-- grunt deploy from lib FB deploy from root -->
+  <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script src="/javascripts/app.js"></script>
+
+  <script src="/javascripts/AppConstants.js"></script>
+  <script src="/javascripts/AppConfig.js"></script>
+  <script src="/javascripts/factories/AuthFactory.js"></script>
+  <script src="/javascripts/factories/PlaybookFactory.js"></script>
+  <script src="/javascripts/factories/UserFactory.js"></script>
+
+  <script src="/javascripts/controllers/AuthCtrl.js"></script>
+  <script src="/javascripts/controllers/PlaybookCtrl.js"></script>
+  <script src="/javascripts/controllers/QuizCtrl.js"></script>
+  <script src="/javascripts/controllers/RosterCtrl.js"></script>
+  <script src="/javascripts/controllers/ScoresCtrl.js"></script>
+  <script src="/javascripts/controllers/UserCtrl.js"></script>
+  <script src="/javascripts/controllers/EditCtrl.js"></script>
+  <!-- <script src="/javascripts/controllers/NavCtrl.js"></script> -->
+
+
+  <!-- grunt deploy from lib FB deploy from root -->
 
 
 </body>
