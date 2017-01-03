@@ -27,26 +27,5 @@ app.controller('ScoresCtrl', function($scope, $location, $routeParams, $rootScop
 		});
 	};
 
-	// let newTime = function (new_time){
-	// 	PlaybookFactory.getTimeStamp(new_time).then(function(){
-	// 		console.log("newer time", new_time);
-	// 	});
-	// }
-	
-// $scope.getTimeStamp = function(time) {
-// 	var now = new Date();
-// 	console.log("new date", now);
-// 	return ((now.getMonth() + 1) + '/' +
-// 		(now.getDate()) + '/' +
-// 		now.getFullYear() + " " +
-// 		now.getHours() + ':' +
-// 		((now.getMinutes() < 10)
-// 			? ("0" + now.getMinutes())
-// 			: (now.getMinutes())) + ':' +
-// 		((now.getSeconds() < 10)
-// 			? ("0" + now.getSeconds())
-// 			: (now.getSeconds())));
-// }
-// console.log($scope.getTimeStamp());
 
 });

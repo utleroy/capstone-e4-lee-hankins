@@ -1,95 +1,94 @@
-<div class="container">
 	<div class="row">
 		<div class="col-md-4">
 		</div>
-		<div class="col-md-4">
-			<h3>Take the quiz</h3>
-			<img src="/img/takeQuiz.png">
+		<div class="col-md-4 text-center">
+			<img class="img-circle" src="/img/takeQuiz.png">
+			<h2>Take the quiz</h2>
+			<p>After you ace the quiz for your position, you're ready to go!</p>
 		</div>
 		<div class="col-md-4">
 		</div>
 	</div>
-</div>
 
-<div class="container">
-	<div class="row">
-		<h3>Choose your position below</h3>
-		<button ng-click="position('qb')" class="btn btn-success col-md-2 position">QB</button>
-		<button ng-click="position('rb')" class="btn btn-success col-md-2 position">RB</button>
-		<button ng-click="position('te')" class="btn btn-success col-md-2 position">TE</button>
-		<button ng-click="position('wr')" class="btn btn-success col-md-2 position">WR</button>	
+	<div class="container">
+		<div class="row">
+			<h3>Choose your position below</h3>
+			<button ng-click="position('qb')" class="btn btn-success col-md-2 position">QB</button>
+			<button ng-click="position('rb')" class="btn btn-success col-md-2 position">RB</button>
+			<button ng-click="position('te')" class="btn btn-success col-md-2 position">TE</button>
+			<button ng-click="position('wr')" class="btn btn-success col-md-2 position">WR</button>	
+		</div>
 	</div>
-</div>
 
-<div class="QB_quiz" ng-show="QB_quiz">
-	<h3>Quiz for QB</h3>
-	<h3>Play 1</h3>
-	<div id="QB_question1">
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="A" autocomplete="off"> A. Pass to the RB
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="B" autocomplete="off"> B. Hand off to the RB
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="C" autocomplete="off"> C. Fumble on purpose
-		</label>
+	<div class="QB_quiz" ng-show="QB_quiz">
+		<h3>Quiz for QB</h3>
+		<h3>Play 1</h3>
+		<div id="QB_question1">
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="A" autocomplete="off"> A. Pass to the RB
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="B" autocomplete="off"> B. Hand off to the RB
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="C" autocomplete="off"> C. Fumble on purpose
+			</label>
+		</div>
+		<hr>
+		<button type="button" ng-click="answersQB()" class="btn btn-primary">Add</button>
 	</div>
-	<hr>
-	<button type="button" ng-click="answersQB()" class="btn btn-primary">Add</button>
-</div>
 
-<div class="RB_quiz" ng-show="RB_quiz">
-	<h3>What is your responsibility for RB?</h3>
-	<div id="RB_question1">
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="A" autocomplete="off"> A. Run through the 1 gap
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="B" autocomplete="off"> B. Run through the 3 gap
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="C" autocomplete="off"> C. Kick the ball
-		</label>
+	<div class="RB_quiz" ng-show="RB_quiz">
+		<h3>What is your responsibility for RB?</h3>
+		<div id="RB_question1">
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="A" autocomplete="off"> A. Run through the 1 gap
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="B" autocomplete="off"> B. Run through the 3 gap
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="C" autocomplete="off"> C. Kick the ball
+			</label>
+		</div>
+		<hr>
+		<button type="button" ng-click="answersRB()" class="btn btn-primary">Submit Quiz</button>
 	</div>
-	<hr>
-	<button type="button" ng-click="answersRB()" class="btn btn-primary">Submit Quiz</button>
-</div>
 
-<div class="TE_quiz" ng-show="TE_quiz">
-	<h3>What is your responsibility for TE?</h3>
-	<div id="TE_question1">
+	<div class="TE_quiz" ng-show="TE_quiz">
+		<h3>What is your responsibility for TE?</h3>
+		<div id="TE_question1">
 
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="A" autocomplete="off"> A. Run a post route
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="B" autocomplete="off"> B. Block the outside Linebacker
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="C" autocomplete="off"> C. Run to the locker room
-		</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="A" autocomplete="off"> A. Run a post route
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="B" autocomplete="off"> B. Block the outside Linebacker
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="C" autocomplete="off"> C. Run to the locker room
+			</label>
+		</div>
+		<hr>
+		<button type="button" ng-click="answersTE()" class="btn btn-primary">Submit Quiz</button>
 	</div>
-	<hr>
-	<button type="button" ng-click="answersTE()" class="btn btn-primary">Submit Quiz</button>
-</div>
 
-<div class="WR_quiz" ng-show="WR_quiz">
-	<h3>What is your responsibility for WR?</h3>
-	<div id="WR_question1">
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="A" autocomplete="off"> A. Block for a wide receiver screen
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="B" autocomplete="off"> B. run a deep route down the sideline
-		</label>
-		<label class="btn btn-success col-md-12 answer">
-			<input type="radio" name="options" value="C" autocomplete="off"> C. Grab the ref's wistle
-		</label>
+	<div class="WR_quiz" ng-show="WR_quiz">
+		<h3>What is your responsibility for WR?</h3>
+		<div id="WR_question1">
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="A" autocomplete="off"> A. Block for a wide receiver screen
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="B" autocomplete="off"> B. run a deep route down the sideline
+			</label>
+			<label class="btn btn-success col-md-12 answer">
+				<input type="radio" name="options" value="C" autocomplete="off"> C. Grab the ref's wistle
+			</label>
+		</div>
+		<hr>
+		<button type="button" ng-click="answersWR()" class="btn btn-primary">Submit Quiz</button>
 	</div>
-	<hr>
-	<button type="button" ng-click="answersWR()" class="btn btn-primary">Submit Quiz</button>
-</div>
 
 
 

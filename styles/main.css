@@ -5,8 +5,10 @@ body {
   background-attachment: fixed;
   background-size: cover; }
 
-iframe {
-  margin-top: -20px; }
+.img-circle {
+  border: 7px solid black;
+  max-width: 174px;
+  min-height: 174px; }
 
 footer {
   margin-top: 150px;
@@ -40,9 +42,6 @@ input {
 
 .play {
   margin-bottom: 15px; }
-
-.navbar {
-  padding-right: 15px; }
 
 .runner {
   margin-left: -500px;

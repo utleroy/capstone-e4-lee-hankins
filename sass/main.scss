@@ -1,12 +1,22 @@
 body {
 	background-image: url("../img/burntFb.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-    background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-size: cover;
+	// background-color: #D0CBCB;
+	
 }
+
+.img-circle {
+	border: 7px solid black;
+	max-width: 174px;
+	min-height: 174px;
+}
+
+
 iframe {
-	margin-top: -20px;
+
 }
 
 footer {
@@ -16,106 +26,103 @@ footer {
 
 
 .legend {
-  color: white; }
+	color: white; }
 
-.answer {
-  margin: 0 0 15px 0; }
+	.answer {
+		margin: 0 0 15px 0; }
 
-.boxed {
+		.boxed {
 
-	border-bottom: 1px solid black;
-	padding: 10px;
-	margin: 10px;
-}
+			border-bottom: 1px solid black;
+			padding: 10px;
+			margin: 10px;
+		}
 
-.loginBtn {
-	margin-bottom: 10px;
-}
+		.loginBtn {
+			margin-bottom: 10px;
+		}
 
-input {
-	border: 3px solid #333;
-}
+		input {
+			border: 3px solid #333;
+		}
 
-.loginBtn {
-	border: 3px solid #333;
-	
-}
+		.loginBtn {
+			border: 3px solid #333;
 
-.logo {
-	margin: auto;
-}
+		}
 
-.logoSm {
-	margin-top: -10px;
-}
+		.logo {
+			margin: auto;
+		}
 
-.play {
-	margin-bottom: 15px;
-}
+		.logoSm {
+			margin-top: -10px;
+		}
 
-.navbar {
-	padding-right: 15px;
-}
+		.play {
+			margin-bottom: 15px;
+		}
 
-.runner {
-	margin-left: -500px;
-	margin-top: -500px;
-}
 
-.btn-info {
-	background-color: #FF9033;
-}
+		.runner {
+			margin-left: -500px;
+			margin-top: -500px;
+		}
 
-.btn-success {
-	background-color: #FE7400;
-}
+		.btn-info {
+			background-color: #FF9033;
+		}
 
-.loginBtn {
-  margin-bottom: 10px; }
+		.btn-success {
+			background-color: #FE7400;
+		}
 
-input {
-  border: 3px solid #333; }
+		.loginBtn {
+			margin-bottom: 10px; }
 
-.loginBtn {
-  border: 3px solid #333; }
+			input {
+				border: 3px solid #333; }
 
-.logo {
-  margin: auto; }
+				.loginBtn {
+					border: 3px solid #333; }
 
-.logoSm {
-  margin-top: -10px; }
+					.logo {
+						margin: auto; }
 
-.play {
-  margin-bottom: 15px; }
+						.logoSm {
+							margin-top: -10px; }
 
-.navbar {
-  padding-right: 15px; }
+							.play {
+								margin-bottom: 15px; }
+
+								.navbar {
+									padding-right: 15px; }
 
 // .runner {
 //   margin-left: -20px;}
 
 .btn-info {
-  background-color: #FF9033; }
+	background-color: #FF9033; }
 
-.btn-success {
-  background-color: #FE7400; 
-}
- 
- .play_1 {
- 	margin-top: 100px;
- }
+	.btn-success {
+		background-color: #FE7400; 
+	}
 
- .instructions {
- 	margin-top: 100px;
- }
+	.play_1 {
+		margin-top: 100px;
+	}
 
- .label-default{
- 	margin-right: 2px;
- }
+	.instructions {
+		margin-top: 100px;
+	}
 
- .btn.btn-success.col-md-2.position {
- 	margin-left: 3.4%;
- }
+	.label-default{
+		margin-right: 2px;
+	}
+
+	.btn.btn-success.col-md-2.position {
+		margin-left: 3.4%;
+	}
 
 
 
